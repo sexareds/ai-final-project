@@ -21,17 +21,17 @@ class Paint:
     def setup_gui(self):
         self.root = Tk()
         self.root.title('Paint')
-        self.root.geometry('1200x450')  # Cambiar a 1200x450
-        self.root.maxsize(1200, 450)
-        self.root.minsize(1200, 450)
+        self.root.geometry('800x600')  # Cambiar a 800x600
+        self.root.maxsize(800, 600)
+        self.root.minsize(800, 600)
         self.root.configure(bg='#121212')  # Modo oscuro
 
     def setup_canvas(self):
-        self.c = Canvas(self.root, bg='#FFFFFF', width=1100, height=450, relief=RIDGE, borderwidth=0)  # Ajustar dimensiones del canvas
+        self.c = Canvas(self.root, bg='#FFFFFF', width=700, height=600, relief=RIDGE, borderwidth=0)  # Ajustar dimensiones del canvas
         self.c.pack(side=RIGHT)
 
     def setup_tools(self):
-        self.paint_tools = Frame(self.root, width=100, height=450, relief=RIDGE, borderwidth=2, bg='#121212')  # Ajustar dimensiones del frame
+        self.paint_tools = Frame(self.root, width=100, height=600, relief=RIDGE, borderwidth=2, bg='#121212')  # Ajustar dimensiones del frame
         self.paint_tools.pack(side=LEFT, fill=Y)
 
         self.pen_logo = ImageTk.PhotoImage(Image.open('src/interface/assets/pen.png').resize((36, 36)))
@@ -102,3 +102,8 @@ class Paint:
 
     def run(self):
         self.root.mainloop()
+
+# Ejecutar la aplicación
+if __name__ == '__main__':
+    paint_app = Paint()
+    paint_app.run()
